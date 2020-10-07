@@ -3,8 +3,13 @@ import './App.css';
 import DataNews from "./DataNews";
 
 function WindowsNews(props) {
-    console.log(props.search)
-    let result = DataNews(props.search)
+    console.log(props)
+    let result
+    try {
+        result = DataNews(props.search.search, props.search.page)
+    } catch {
+        result = {status: 'Not found'}
+    }
     console.log(result)
     if (result.status === 'ok') {
         let news = result.articles.map((number,index) =>
@@ -21,9 +26,16 @@ function WindowsNews(props) {
             </div>
         )
         return (
-            <div className="container-fluid row row-cols-1 row-cols-md-3">
-                {news}
+            <div>
+                <div className="container-fluid row row-cols-1 row-cols-md-3">
+                    {news}
+                </div>
+                <p className='text-center'>Page: {props.search.page}</p>
             </div>
+        )
+    } else if (result.status === 'Not found') {
+        return (
+            <h3>Not found 404</h3>
         )
     } else {
         return (

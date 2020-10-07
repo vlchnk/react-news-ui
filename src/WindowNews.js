@@ -30,7 +30,7 @@ function WindowsNews(props) {
                 <div className="container-fluid row row-cols-1 row-cols-md-3">
                     {news}
                 </div>
-                <p className='text-center'>Page: {props.search.page}</p>
+                {/*<p className='text-center'>Page: {props.search.page}</p>*/}
             </div>
         )
     } else if (result.status === 'Not found') {

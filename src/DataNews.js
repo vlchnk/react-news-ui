@@ -16,14 +16,14 @@ function DataNews(text, page) {
             sortBy: 'publishedAt',
             language: 'en',
             page: pageNumber
-        })
+        }, {noCache: true})
         .then(
             (result) => {
                 console.log(result)
                 setItems(result);
             }
         )
-    }, [search])
+    }, [pageNumber, search])
     return items
 }
 

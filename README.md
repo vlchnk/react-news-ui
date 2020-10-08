@@ -4,8 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 You can try the project here -> [react-news-ui](https://react-news-ui.herokuapp.com/)
 
-## FAQ
+## Stack
 
-Why isn't the Next Page button working?
-
-_`Because NewsAPI sends this array`_
+* [Bootstrap](https://getbootstrap.com/)
+* [React](https://reactjs.org/)
+* [News API](https://newsapi.org/)
